@@ -7,4 +7,7 @@ docker build --tag coronavirus .
 echo ____Running the Docker image____
 docker run -d --name goodbye-coronavirus -p 8000:8000 coronavirus
 
+echo ____Tailing docker container logs____
+docker logs -f goodbye-coronavirus
+
 # Go to http://127.0.0.1:8000/
