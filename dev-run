@@ -1,0 +1,10 @@
+echo ____Stopping and removing old coronavirus container____
+docker stop goodbye-coronavirus || true && docker rm goodbye-coronavirus || true
+
+echo ____Building the Dockerfile into a Docker image____
+docker build --tag coronavirus .
+
+echo ____Running the Docker image____
+docker run -d --name goodbye-coronavirus -p 8000:8000 coronavirus
+
+# Go to http://127.0.0.1:8000/
