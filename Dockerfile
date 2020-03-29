@@ -1,8 +1,8 @@
-# base image for node
+# lightweight base image for node
 FROM node:alpine
 
 # set the working directory from within the container to be /app
-WORKDIR /app
+WORKDIR /app/src
 
 # copying the dependencies for the express server into working directory
 COPY package.json /app
