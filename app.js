@@ -21,7 +21,6 @@ app.get('/schedule-grocery-session', function (req, res) {
   res.send('whole foods sucks') 
 })
 
-
 //Launch listening server on port 8081
 app.listen(8000, function () {
   console.log('app listening on port 8000!')
