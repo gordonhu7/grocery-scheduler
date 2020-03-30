@@ -15,12 +15,10 @@ require('./homepage/homepage-endpoint')(app)
 require('./login/login-endpoint')(app,path)
 require('./sample-grocery-session/sample-grocery-session-endpoint')(app)
 
-//example of how to define an endpoint
-//app.get('/', function (req, res) {
-//  res.send('goodbye coronavirus') 
-//})
+// mongo db connection
+require("./db/mongo-db-connection")
 
 //Launch listening server on port 8081
 app.listen(8000, function () {
-  console.log('app listening on port 8000!')
+  console.log('app listening on port 8000!');
 })
