@@ -1,13 +1,13 @@
 module.exports = function(app,path){
 		
 	//var path = require('path');
-	app.get('/login', function(req, res) {
-	    res.sendFile(path.join(__dirname + '/login.html'));
+	app.get('/create-account', function(req, res) {
+	    res.sendFile(path.join(__dirname + '/create-account.html'));
 	    res.status(200)
 	});
 
 	//https://stackoverflow.com/questions/4295782/how-to-process-post-data-in-node-js
-	app.post('/login', function (req, res) {
+	app.post('/create-account', function (req, res) {
 	    username = req.body.username
 	    password = req.body.password
 	 
@@ -16,7 +16,9 @@ module.exports = function(app,path){
 	  	  res.status(401)
 	  	  res.end()
 	    }
-	  
+
+        // send data to db somehow
+
 	  res.status(200)
 	  res.send("hahah just got your password")
 	  res.end()

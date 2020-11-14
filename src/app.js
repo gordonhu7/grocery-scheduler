@@ -10,9 +10,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var path = require('path')
 
 // importing the endpoints as routes to the app
+// TODO: absolute paths instead of relative paths
 require('./healthcheck/healthcheck-endpoint')(app)
 require('./homepage/homepage-endpoint')(app)
 require('./login/login-endpoint')(app,path)
+require('./create-account/create-account-endpoint')(app,path)
 require('./sample-grocery-session/sample-grocery-session-endpoint')(app)
 
 // mongo db connection
