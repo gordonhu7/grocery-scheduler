@@ -1,13 +1,18 @@
-echo ____Stopping and removing old coronavirus container____
-docker stop goodbye-coronavirus || true && docker rm goodbye-coronavirus || true
+# echo ____Stopping and removing old coronavirus container____
+# docker stop goodbye-coronavirus || true && docker rm goodbye-coronavirus || true
 
+#echo ""
 echo ____Building the Dockerfile into a Docker image____
-docker build --tag coronavirus .
+# docker build --tag coronavirus .
+docker-compose build
 
+echo ""
 echo ____Running the Docker image____
-docker run -d --name goodbye-coronavirus -p 8000:8000 coronavirus
+#docker run -d --name goodbye-coronavirus -p 8000:8000 coronavirus
+docker-compose up
 
-echo ____Tailing docker container logs____
-docker logs -f goodbye-coronavirus
+# echo ""
+# echo ____Tailing docker container logs____
+# docker logs -f goodbye-coronavirus
 
 # Go to http://127.0.0.1:8000/
